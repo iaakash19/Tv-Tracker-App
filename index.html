@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngSteroid">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular on Steroids</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="components/next-on/next-on.css">
+	<link rel="stylesheet" href="sections/show/show.css">
+</head>
+<body>
+<div ng-controller="MainController as vm">
+<header class="app-header">
+	
+	<nav>
+		<ul>
+			<li><a ui-sref="whatsOn">What's ON</a></li>
+			<li><a ui-sref="my-shows">My Shows</a></li>
+			<li><a ui-sref="search">Search</a></li>
+		</ul>
+	</nav>
+</header>
+		<main class="main-container container" ui-view></main>
+	</div>
+
+	<script src="scripts/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	
+	<script src="app.js"></script>
+	<script src="app.core.js"></script>
+	<script src="app.routes.js"></script>
+	<script src="app.services.js"></script>
+	<script src="components.module.js"></script>
+
+	<script src="sections/whatsOn/WhatsOnController.js"></script>
+	<script src="sections/show/ShowController.js"></script>
+	<script src="sections/search/SearchController.js"></script>
+	<script src="sections/my-shows/MyshowsController.js"></script> 
+	
+	<script src="services/show.factory.js"></script>
+	<script src="services/store.factory.js"></script>
+
+	<!-- Show Directive -->
+		<script src="components/show/show.directive.js"></script>
+		<script src="components/show/show.controller.js"></script>
+	<!-- Directive -->
+	
+
+	<!-- Next Show Directive -->
+		<script src="components/next-on/next-on.directive.js"></script>
+		<script src="/components/next-on/next-on.controller.js"></script>
+	<!---->
+	
+	<!---->
+		<script src="directives/min-words.dir.js"></script>
+	<!---->
+
+</body>
+</html>

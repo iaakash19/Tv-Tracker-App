@@ -1,0 +1,34 @@
+<!-- searchShows -->
+
+<!---->
+
+<div id="search-page">
+
+	<h1>Find Your Favorite Shows....</h1>
+
+<div class="search_wrap">
+   <input type="search" name="query" ng-model="searchShows.query" class="query" uib-typeahead="show for show in searchShows.typeahead($viewValue)" />
+
+    <button type="button" ng-click="searchShows.search(searchShows.query)">Search</button> 
+</div>
+	
+
+
+    <ul class="dots"><li></li><li></li><li></li></ul>
+    <ul class="query-results row">
+
+        <li class="show col-sm-6" ng-repeat="show in searchShows.results track by show.id">
+            <show-overview show="show"></show-overview>
+        </li>
+
+        <li class="no-data" ng-if="search.results === false">Find shows to track by using the search bar above.</li>
+        <li class="no-data" ng-if="search.results.length == 0">Your search did not return any results, try again.</li>
+    </ul>
+
+    <div class="pagination-container">
+        <uib-pagination total-items="searchShows.totalResults" ng-model="searchShows.currentPage" items-per-page="20" ng-change="searchShows.search(searchShows.query)"> 
+        </uib-pagination>  
+    </div>
+    <ul class="dots bottom"><li></li><li></li><li></li></ul>
+    
+</div>
